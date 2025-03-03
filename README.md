@@ -1,14 +1,6 @@
 # portfolio
 portfolio Nael Gamba 1er année à Epitech
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="logo/DuckDB_Logo-horizontal.svg">
-    <source media="(prefers-color-scheme: dark)" srcset="logo/DuckDB_Logo-horizontal-dark-mode.svg">
-    <img alt="DuckDB logo" src="logo/DuckDB_Logo-horizontal.svg" height="100">
-  </picture>
-</div>
-<br>
 
 <p align="center">
   <a href="https://github.com/duckdb/duckdb/actions"><img src="https://github.com/duckdb/duckdb/actions/workflows/Main.yml/badge.svg?branch=main" alt="Github Actions Badge"></a>
