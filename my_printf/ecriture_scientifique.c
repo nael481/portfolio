@@ -5,6 +5,8 @@
 ** %e
 */
 
+#include "my.h"
+
 int sup_10(double *nb)
 {
     int exposant = 0;

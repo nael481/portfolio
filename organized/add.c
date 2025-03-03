@@ -40,7 +40,7 @@ int is_valid_type(const char *type)
         "\0",
     };
 
-    for (int i = 0; valid_types[i] != NULL; i++) {
+    for (int i = 0; valid_types[i] != "\0"; i++) {
         if (my_strcmp(type, valid_types[i]) == 0) {
             return 0;
         }
@@ -65,7 +65,7 @@ int add(void *data, char **args)
     for (int i = 0; args[i] != NULL; i += 2) {
         if (is_valid_type(args[i]) == -1) {
             mini_printf("Error: Invalid type '%s'.\n", args[i]);
-            return 84;
+            exit(84);
         }
         new_node = malloc(sizeof(material_t));
         if (!new_node)

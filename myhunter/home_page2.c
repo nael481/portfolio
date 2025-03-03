@@ -29,7 +29,7 @@ int initialize_window(
 
     *window = sfRenderWindow_create(mode, "MY_HUNTER",
     sfResize | sfClose, NULL);
-    *texture = sfTexture_createFromFile("back.jpg", NULL);
+    *texture = sfTexture_createFromFile("asset/back.jpg", NULL);
     if (error_gestion(*window, *texture) == -1)
         return -1;
     *sprite = sfSprite_create();

@@ -16,7 +16,7 @@ int initialize_title(sfSprite **title_sprite, sfTexture **title_texture)
     sfVector2f position = {500, 50};
     sfVector2f scale = {2, 2};
 
-    *title_texture = sfTexture_createFromFile("image_my_hunter.png", NULL);
+    *title_texture = sfTexture_createFromFile("asset/image_my_hunter.png", NULL);
     if (!*title_texture) {
         return -1;
     }

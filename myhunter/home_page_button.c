@@ -33,7 +33,7 @@ int initialize_button(sfSprite **button, sfTexture **button_texture)
     button_properties_t props = {{0.5, 0.5}, {800, 400}};
 
     return initialize_button_generic(button, button_texture,
-        "start_button.png", props);
+        "asset/start_button.png", props);
 }
 
 int initialize_exit_button(sfSprite **exit_button,
@@ -42,5 +42,5 @@ int initialize_exit_button(sfSprite **exit_button,
     button_properties_t props = {{0.5, 0.5}, {800, 600}};
 
     return initialize_button_generic(exit_button, exit_button_text,
-        "exit_button1.png", props);
+        "asset/exit_button1.png", props);
 }

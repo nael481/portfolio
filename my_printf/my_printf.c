@@ -64,7 +64,7 @@ void flag3(char param, va_list ap)
         modulo_p(va_arg(ap, int));
         break;
     default:
-        forma(va_arg(ap, char));
+        break;
     }
 }
 

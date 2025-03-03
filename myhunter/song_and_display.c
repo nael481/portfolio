@@ -62,7 +62,7 @@ void initialize_texts(sfText **score_text, sfText **life_text,
 
 sfMusic *initialize_music(void)
 {
-    sfMusic *music = sfMusic_createFromFile("retro_song.mp3");
+    sfMusic *music = sfMusic_createFromFile("song/retro_song.mp3");
 
     if (!music) {
         my_putstr("Failed to load music\n");

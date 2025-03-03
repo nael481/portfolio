@@ -22,7 +22,7 @@ sfRenderWindow *create_game_over_window(void)
 
 sfSprite *create_game_over_sprite(void)
 {
-    sfTexture *texture = sfTexture_createFromFile("game_over.jpg", NULL);
+    sfTexture *texture = sfTexture_createFromFile("asset/game_over.jpg", NULL);
     sfSprite *sprite = sfSprite_create();
     sfVector2f scale = {4, 4};
 

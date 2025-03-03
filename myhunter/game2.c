@@ -34,14 +34,14 @@ int load_game_resources(game_resources_t *res)
 {
     sfTexture *texture;
 
-    texture = sfTexture_createFromFile("fond_nuit.jpg", NULL);
+    texture = sfTexture_createFromFile("asset/fond_nuit.jpg", NULL);
     if (!texture) {
         my_putstr("Failed to load background texture\n");
         return -1;
     }
     res->background = sfSprite_create();
     res->duck = duck_sprite();
-    res->font = sfFont_createFromFile("ARIAL.TTF");
+    res->font = sfFont_createFromFile("asset/ARIAL.TTF");
     if (!res->font || !res->duck) {
         my_putstr("Failed to load sprite or font\n");
         return -1;

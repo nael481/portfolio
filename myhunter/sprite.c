@@ -71,7 +71,7 @@ sprite_t *duck_sprite(void)
 
     if (!duck)
         return NULL;
-    if (load_duck_texture(duck, "sprite_canard.png") == -1)
+    if (load_duck_texture(duck, "asset/sprite_canard.png") == -1)
         return NULL;
     if (create_duck_sprite(duck) == -1)
         return NULL;
