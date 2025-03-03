@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+from math import sqrt, asin, pi
+import sys
+import os
+
+def vecteur(x, y, z):
+    """Crée un vecteur à partir de trois coordonnées."""
+    return [x, y, z]
+
+def sum_vecteur(vector1, vector2):
+    """Retourne la somme de deux vecteurs."""
+    return [vector1[i] + vector2[i] for i in range(3)]
+
+def diff_vecteur(vector1, vector2):
+    """Retourne la différence entre deux vecteurs."""
+    return [vector2[i] - vector1[i] for i in range(3)]
+
+def mult_vecteur(vector1, m):
+    """Multiplie un vecteur par un scalaire."""
+    return [vector1[i] * m for i in range(3)]
+
+def norm_vecteur(vector):
+    """Retourne la norme d'un vecteur."""
+    return sqrt(vector[0]**2 + vector[1]**2 + vector[2]**2)
+
+def ball_position(x0, y0, z0, x1, y1, z1, n):
+    """Calcule et affiche la position de la balle après n étapes."""
+    distance_x = x1 - x0
+    distance_y = y1 - y0
+    distance_z = z1 - z0
+    position_x = x0
+    position_y = y0
+    position_z = z0
+
+    for _ in range(n):
+        position_x += distance_x
+        position_y += distance_y
+        position_z += distance_z
+
+    print(f"({position_x:.2f}, {position_y:.2f}, {position_z:.2f})")
+
+def angle(z0, vector):
+    """Calcule et affiche l'angle d'incidence avec l'axe Z."""
+    incidence = z0 / norm_vecteur(vector)
+    angle_degrees = asin(incidence) * 180 / pi
+    return abs(angle_degrees)
+
+def pong(x0, y0, z0, x1, y1, z1, n):
+    """Simule le mouvement de la balle et calcule l'angle d'incidence."""
+    print("The velocity vector of the ball is:")
+    velocity_vector = diff_vecteur(vecteur(x0, y0, z0), vecteur(x1, y1, z1))
+    print(f"({velocity_vector[0]:.2f}, {velocity_vector[1]:.2f}, {velocity_vector[2]:.2f})")
+    print(f"At time t + {n}, ball coordinates will be:")
+    ball_position(x0, y0, z0, x1, y1, z1, n + 1)
+
+    if velocity_vector[0] <= 0 and x0 <= 0:
+        print("The ball won't reach the paddle.")
+    elif velocity_vector[1] <= 0 and y0 <= 0:
+        print("The ball won't reach the paddle.")
+    elif velocity_vector[2] <= 0 and z0 <= 0 :
+        print("The ball won't reach the paddle.")
+    elif angle(velocity_vector[2], velocity_vector) == 0.00 :
+        print("The ball won't reach the paddle.")
+    else:
+        print("The incidence angle is:")
+        print(f"{angle(velocity_vector[2], velocity_vector):.2f}", "degrees")
+
+
+# Partie du programme qui récupère les arguments et gère les erreurs
+if len(sys.argv) != 8:
+    print(84)
+    sys.exit(84)
+else:
+    for i in range(1, 7):
+        coordinates = sys.argv[i]
+        try:
+            float(coordinates)
+        except ValueError:
+            print("84")
+            sys.exit(84)
+    
+    speed = sys.argv[7]
+    try:
+        n = int(speed)
+    except ValueError:
+        print("84")
+        sys.exit(84)
+
+    x0 = float(sys.argv[1])
+    y0 = float(sys.argv[2])
+    z0 = float(sys.argv[3])
+    x1 = float(sys.argv[4])
+    y1 = float(sys.argv[5])
+    z1 = float(sys.argv[6])
+    n = int(sys.argv[7])
+
+if n < 0:
+    print(84)
+    sys.exit(84)
+pong(x0, y0, z0, x1, y1, z1, n)

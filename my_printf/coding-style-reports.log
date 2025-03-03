@@ -1,0 +1,13 @@
+./format.c:15: MINOR:C-L2
+./format.c:20: INFO:C-A3
+./format_+.c:1: MINOR:C-O4
+./format_+.c:8: MINOR:C-L3
+./format_+.c:10: MINOR:C-G7
+./format_+.c:10: MINOR:C-L6
+./format_l.c:8: MINOR:C-G7
+./format_l.c:11: MINOR:C-G7
+./format_l.c:11: MINOR:C-L6
+./format_l.c:12: INFO:C-A3
+./long_long_my_hexa.c:31: INFO:C-A3
+./long_long_putdouble.c:18: INFO:C-A3
+./my_long_putnbr.c:1: MINOR:C-G1
